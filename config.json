@@ -1,0 +1,4 @@
+{
+	"receiverHost": "<Communicating partner's IP address or domain>",
+	"port": <port number Integer Value> 
+}
