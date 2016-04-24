@@ -31,17 +31,12 @@ with open ('./values/pubkey.json', 'r') as file:
   myPubkey = unhexlify (data["pubkey"])
 file.close()
 
-
 ecc = pyelliptic.ECC(privkey=myPrivkey, pubkey=myPubkey ,curve='secp521r1')
-
-
 
 #Get Receiver public key
 
 r = requests.get(url+"/values/pubkey.json")
 receiverPubkey = unhexlify (r.json()["pubkey"])
-#print receiverPubkey
-
 
 #Generate Shared key
 sharedKey = ecc.get_ecdh_key (receiverPubkey)
