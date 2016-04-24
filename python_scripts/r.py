@@ -41,7 +41,7 @@ ciphertext = unhexlify (sys.argv [1])
 signature = unhexlify (sys.argv [2])
 iv = sys.argv [3]
 
-#print "Signature: ", hexlify (signature)
+
 #decrypt Message
 ctx = pyelliptic.Cipher("secretkey", iv, 1, ciphername='aes-256-cfb')
 message = ctx.ciphering (ciphertext)
